@@ -5,6 +5,8 @@
 using namespace sf;
 using namespace std;
 
+//const double PI = 3.14159265358979323846;
+
 //Done by Anna :3
 
 /*
@@ -62,7 +64,7 @@ Particle::Particle(RenderTarget& target, int numPoints, Vector2i mouseClickPosit
     m_ttl = TTL;
     m_numPoints = numPoints;
     float randomNumber = static_cast<float>(rand()) / (RAND_MAX);
-    m_radiansPerSec = randomNumber * PI;
+    m_radiansPerSec = randomNumber * M_PI;
 
     m_cartesianPlane.setCenter(0, 0);
     m_cartesianPlane.setSize(target.getSize().x, -1.0 * target.getSize().y);
@@ -74,8 +76,8 @@ Particle::Particle(RenderTarget& target, int numPoints, Vector2i mouseClickPosit
     m_color1 = Color::White;
     m_color2 = Color(rand() % 256, rand() % 256, rand() % 256);
 
-    float theta = static_cast<float>(rand()) / RAND_MAX * (PI / 2);
-    float dTheta = 2 * PI / (numPoints - 1);
+    float theta = static_cast<float>(rand()) / RAND_MAX * (M_PI / 2);
+    float dTheta = 2 * M_PI / (numPoints - 1);
     float r, dx, dy;
 
     for (int j = 0; j < numPoints; j++) {
@@ -175,8 +177,9 @@ Update the particle's center coordinate:
  */
 
 void Particle::translate(double xShift, double yShift) {
-    TranslationMatrix T(xShift, yShift);
-    T = T + m_A;
+    int nCols = m_A.getCols();
+    TranslationMatrix T(xShift, yShift, nCols);
+    m_A = T + m_A;
     //T += m_A;
     m_centerCoordinate.x += static_cast<float>(xShift);
     m_centerCoordinate.y += static_cast<float>(yShift);
