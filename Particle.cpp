@@ -176,7 +176,8 @@ Update the particle's center coordinate:
 
 void Particle::translate(double xShift, double yShift) {
     TranslationMatrix T(xShift, yShift);
-    T += m_A;
+    T = T + m_A;
+    //T += m_A;
     m_centerCoordinate.x += static_cast<float>(xShift);
     m_centerCoordinate.y += static_cast<float>(yShift);
 }
