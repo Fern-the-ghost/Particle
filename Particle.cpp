@@ -123,7 +123,7 @@ When the loop is finished, draw the VertexArray:
 
 void Particle::draw(RenderTarget& target, RenderStates states) const {
     VertexArray lines(TriangleFan, m_numPoints + 1);
-    Vector2f center = target.mapCoordsToPixel(m_centerCoordinate, m_cartesianPlane);
+    Vector2f center(Target.mapCoordsToPixel(m_centerCoordinate, m_cartesianPlane));
 
     lines[0].position = center;
     lines[0].color = m_color1;
