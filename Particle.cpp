@@ -5,7 +5,6 @@
 using namespace sf;
 using namespace std;
 
-//const double PI = 3.14159265358979323846;
 
 //Done by Anna :3
 
