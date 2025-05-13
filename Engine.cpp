@@ -89,21 +89,18 @@ void Engine::input()
 }
 
 void Engine::update(float dtAsSeconds)
-{
-  auto num = m_particles.begin();
-  
-  while(num != m_particles.end())
+{//Fix: m_particles is vector & not int, so cant use 'int i = 0'
+    for (size_t i = 0; i < m_particles.size();) //Fix: needs to have semi-colon, even if its not incremented
     {
-      if(num->getTTL() > 0.0f)
-      {
-        num->update(dtAsSeconds);
-        ++num;
-      }
-      else
-      {
-        num = m_particles.erase(num);
-        //DO NOT increment
-      }
+        if (m_particles[i].getTTL() > 0.0f)
+        {
+            m_particles[i].update(dtAsSeconds);
+            i++;
+        }
+        else
+        {
+            m_particles.erase(m_particles.begin() + i);
+        }
     }
 }
 
