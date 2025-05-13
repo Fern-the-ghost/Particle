@@ -42,7 +42,9 @@ void Engine::run()
 
   while(m_Window.isOpen())
     {
-      float sec = clock.restart().asSeconds();
+      Time time1 = clock.restart();
+      float sec = time1.asSeconds();
+        
       input();
       update(sec);
       draw();
