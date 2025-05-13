@@ -1,8 +1,8 @@
 #include "Matrices.h"
 
+//Done by Fernanda
 namespace Matrices
 {
-//done by Fernanda
     ///Construct a matrix of the specified size.
     ///Initialize each element to 0.
     Matrix::Matrix(int _rows, int _cols)
@@ -102,27 +102,25 @@ namespace Matrices
         }
         return os;
     }
-}
-//done by Anna
+
+//Done by Anna
     RotationMatrix::RotationMatrix(double theta) : Matrix(2,2){
-        //something
         a[0][0] = cos(theta);
         a[0][1] = -sin(theta);
         a[1][0] = sin(theta);   
         a[1][1] = cos(theta);
     }
     ScalingMatrix::ScalingMatrix(double scale) : Matrix(2,2){
-        //something
         a[0][0] = scale;
         a[0][1] = 0.0;
         a[1][0] = 0.0;     
         a[1][1] = scale;
     }
-    TranslationMatrix::TranslationMatrix(double xShift, double yShift, int nCols) : Matrix(2,2){
-        //something
+    TranslationMatrix::TranslationMatrix(double xShift, double yShift, int nCols) : Matrix(2,nCols){ //Fixed: changed 2 to nCols
         for (int i = 0; i < nCols; i++){
             a[0][i] = xShift;
             a[1][i] = yShift;
         }
     }
+
 }
