@@ -14,6 +14,8 @@ private:
 
 	//vector for Particles
 	vector<Particle> m_particles;
+	Texture texture;
+	Sprite yippe;
 	SoundBuffer buffer;
 	Sound yippee;
 	// Private functions for internal use only
