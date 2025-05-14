@@ -14,8 +14,8 @@ private:
 
 	//vector for Particles
 	vector<Particle> m_particles;
-	SoundBuffer m_bufferClick;
-	Sound m_clickSound;
+	SoundBuffer buffer;
+	Sound yippee;
 	// Private functions for internal use only
 	void input();
 	void update(float dtAsSeconds);

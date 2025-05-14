@@ -67,11 +67,14 @@ void Engine::input()
       {
           if(event.mouseButton.button == Mouse::Left)
           {
-              sf::SoundBuffer buffer;
-              buffer.loadFromFile("click.wav");
-                Sound yippee;
-                yippee.setBuffer(buffer);
-                yippee.play();
+              //sf::SoundBufffer buffer;
+              if (!buffer.loadFromFile("click.wav"))
+              {
+                cout << "Failed to load sound" << endl;
+              }
+              //Sound yippee;
+              yippee.setBuffer(buffer);
+              yippee.play();
             
             Vector2i mouse_Pos = Mouse::getPosition(m_Window);
             
