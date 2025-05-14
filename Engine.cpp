@@ -61,7 +61,7 @@ void Engine::input()
           if(event.mouseButton.button == Mouse::Left)
           {
               //Sprite
-              if(!texture.loadFromFile(yippee.png))
+              if(!texture.loadFromFile("Yippee.png"))
               {
                   cout << "Error loading png" << endl;
               }
