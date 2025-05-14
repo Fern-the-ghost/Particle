@@ -3,8 +3,7 @@
 #include "Particle.h"
 #include <SFML/System/Clock.hpp>
 #include <SFML/System/Time.hpp>
-#include <SFML/Audio/SoundBuffer.hpp>
-#include <SFML/Audio/Sound.hpp>
+#include <SFML/Audio.hpp>
 using namespace sf;
 using namespace std;
 
@@ -68,6 +67,11 @@ void Engine::input()
       {
           if(event.mouseButton.button == Mouse::Left)
           {
+              sf::SoundBuffer buffer;
+                buffer.loadFromFile("./yippee-original-sound-effect-made-with-Voicemod.wav");
+                Sound yippee;
+                yippee.setBuffer(buffer);
+                yippee.play();
             
             Vector2i mouse_Pos = Mouse::getPosition(m_Window);
             
@@ -79,11 +83,11 @@ void Engine::input()
                 
                 m_particles.push_back(particle);
 
-                sf::SoundBuffer buffer;
+                /*sf::SoundBuffer buffer;
                 buffer.loadFromFile("./yippee-original-sound-effect-made-with-Voicemod.wav");
                 Sound yippee;
                 yippee.setBuffer(buffer);
-                yippee.play();
+                yippee.play();*/
               }
           }
       }
