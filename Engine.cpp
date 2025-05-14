@@ -73,7 +73,7 @@ void Engine::input()
                   cout << "Error loading png" << endl;
               }
               yippe.setTextureRect({10,10},{50,30});
-              m_Window.draw(yippe);
+              //m_Window.draw(yippe);
               //sf::SoundBufffer buffer;
               if (!buffer.loadFromFile("click.wav"))
               {
@@ -99,6 +99,8 @@ void Engine::input()
                 yippee.setBuffer(buffer);
                 yippee.play();*/
               }
+              yippe.setPosition(mouse_Pos);
+              m_Window.draw(yippe);
           }
       }
       if (Keyboard::isKeyPressed(Keyboard::Escape))
