@@ -72,7 +72,7 @@ void Engine::input()
               {
                   cout << "Error loading png" << endl;
               }
-              yippe
+              yippe.setTextureRect({10,10},{50,30});
               m_Window.draw(yippe);
               //sf::SoundBufffer buffer;
               if (!buffer.loadFromFile("click.wav"))
