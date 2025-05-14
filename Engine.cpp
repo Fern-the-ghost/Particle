@@ -67,6 +67,13 @@ void Engine::input()
       {
           if(event.mouseButton.button == Mouse::Left)
           {
+              //Sprite
+              if(!texture.loadFromFile(yippee.png))
+              {
+                  cout << "Error loading png" << endl;
+              }
+              yippe
+              m_Window.draw(yippe);
               //sf::SoundBufffer buffer;
               if (!buffer.loadFromFile("click.wav"))
               {
