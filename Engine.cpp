@@ -72,7 +72,7 @@ void Engine::input()
               {
                   cout << "Error loading png" << endl;
               }
-              yippe.setTextureRect({10,10},{50,30});
+              yippe.setTexture(texture);
               //m_Window.draw(yippe);
               //sf::SoundBufffer buffer;
               if (!buffer.loadFromFile("click.wav"))
@@ -99,8 +99,7 @@ void Engine::input()
                 yippee.setBuffer(buffer);
                 yippee.play();*/
               }
-              yippe.setPosition(mouse_Pos);
-              m_Window.draw(yippe);
+              yippe.setPosition((Vector2f)mouse_Pos);
           }
       }
       if (Keyboard::isKeyPressed(Keyboard::Escape))
@@ -136,5 +135,6 @@ void Engine::draw()
       //Will go through each particle in the vector and put it in m_window.draw where it will call the Particle draw function
       m_Window.draw(Particle);
     }
+    m_Window.draw(yippe);
   m_Window.display();
 }
