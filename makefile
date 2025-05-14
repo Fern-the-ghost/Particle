@@ -7,7 +7,7 @@ LDFLAGS := -L/opt/homebrew/lib -lsfml-graphics -lsfml-window -lsfml-system -lsfm
 CXXFLAGS := -g -Wall -fpermissive -std=c++17 -I/opt/homebrew/include
 TARGET := triangle.out
 
-ASSET := click.wav
+ASSET := click.wav yippee.png
 
 $(TARGET): $(OBJ_FILES)
 	g++ -o $@ $^ $(LDFLAGS)
