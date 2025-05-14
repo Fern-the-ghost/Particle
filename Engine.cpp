@@ -68,7 +68,7 @@ void Engine::input()
           if(event.mouseButton.button == Mouse::Left)
           {
               sf::SoundBuffer buffer;
-                buffer.loadFromFile("./yippee-original-sound-effect-made-with-Voicemod.wav");
+              buffer.loadFromFile("click.wav");
                 Sound yippee;
                 yippee.setBuffer(buffer);
                 yippee.play();
